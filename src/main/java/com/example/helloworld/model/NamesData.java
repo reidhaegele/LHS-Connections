@@ -12,22 +12,21 @@ public class NamesData {
     }
 
     // add
-    public static void add(Names newCheese) {
-        names.add(newCheese);
+    public static void add(Names newName) {
+        names.add(newName);
     }
 
     // getById
     public static Names getById(int id) {
 
-        Names theCheese = null;
+        Names theName = null;
 
-        for (Names candidateCheese : names) {
-            if (candidateCheese.getNameId() == id) {
-                theCheese = candidateCheese;
+        for (Names candidateName : names) {
+            if (candidateName.getNameId() == id) {
+                theName = candidateName;
             }
         }
 
-        return theCheese;
+        return theName;
     }
-
 }
