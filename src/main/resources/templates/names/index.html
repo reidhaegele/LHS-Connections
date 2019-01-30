@@ -17,8 +17,8 @@
         <th>Name</th>
     </tr>
 
-    <tr th:each="username : ${names}">
-        <td th:text="${username.username}"></td>
+    <tr th:each="name : ${names}">
+        <td th:text="${name.name}"></td>
     </tr>
 
 </table>
