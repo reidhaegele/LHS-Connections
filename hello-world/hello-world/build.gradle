@@ -27,10 +27,3 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-<<<<<<< HEAD
-=======
-
-bootRun {
-	addResources = true
-}
->>>>>>> refs/remotes/origin/master
