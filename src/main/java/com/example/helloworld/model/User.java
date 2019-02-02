@@ -13,14 +13,16 @@ public class User {
     private String lindberghEmail;
     private int userId;
 
-    private static int nextId = 1;
+    private static int nextUserId = 1;
 
     public User (String firstName, String lastName, String lindberghEmail, int gradeLevel) {
-        userId = nextId;
-        nextId++;
+        userId = nextUserId;
+        nextUserId++;
 
         this.firstName = firstName;
         this.lastName = lastName;
+
+        //TODO -> add validation for entered lindbergh email (use regex???)
         this.lindberghEmail = lindberghEmail;
 
         switch (gradeLevel) {
