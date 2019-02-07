@@ -1,66 +1,196 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <div align="right">
-                <form action="signIn.html">
-                    <button type="submit" class="btn btn-danger">Sign In</button>
-                </form>
-            </div>
-            <title>Lindr.com</title>    
-            
-            <!-- Links BootStrap and Main.css-->
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-                <link rel="stylesheet" href="main.css">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
-        </head>
-        <body>
-            <header>
-                <nav class="navbar">
-                    <ul>
-                        <div class="myPanel">
-                            <div class="heading">
-                                <li><h2>Lindr</h2></li>
-                                <li class="body">
-                                    <a href="#">Home</a>
-                                    <a href="#">Help</a>
-                                    <a href="#">tutor</a>
-                                    <a href="#">students</a>
-                                    <a href="#">Teachers</a>
-                                </li>
-                                <li>
-                                    <nav class="navbar navbar-light">
-                                        <form class="form-inline">
-                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                        <button class="btn btn-outline-success my-2 my-sm-0 btn-light" type="submit">Search</button>
-                                        </form>
-                                    </nav>
-                                </li>
-                            </div>
-                        </div>
-                    </ul>
-                </nav>
-            </header>
-        <!-- This is the Navigation Bar -->
-                
-        <!-- Panel -->
-        <div class="page">
-            <div>
-                <h1>Welcome to Lindr</h1>
-                <div class="page" style="background: #0E9B35; padding: 1px 1px;">
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-                </div>
-            </div>
-        </div>
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
+.dropdown-content a:hover {background-color: #ddd;}
 
+.dropdown:hover .dropdown-content {display: block;}
 
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    table, th, td {
+  border: 2px solid black;
+}
+body {font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;}
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-        <!-- Importing Java Scripts and Links Main.js-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        <script src="main.js"></script>
-        </body>
-    </html>
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 12px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: red;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<h1>LHS CONNECTIONS</h1>
+
+<h3>What class do you need help with?</h3>
+<div class="dropdown">
+    <button class="dropbtn">Subject</button>
+    <div class="dropdown-content">
+        <a href="#">Mathematics</a>
+        <a href="#">Language</a>
+        <a href="#">Science</a>
+        <a href="#">Social Studies</a>
+        <a href="#">Engineering and Technology</a>
+    </div>
+</div>
+
+<table style='width:60%'>
+    <tr>
+        <th>Name</th>
+        <th>Classes offered</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>Math through pre calc</td>
+        <td align = "center"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User Profile</button></td>
+    </tr>
+    <tr>
+        <td>Jane Doe</td>
+        <td>Algebra 1 and 2</td>
+        <td align = "center"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User Profile</button></td>
+    </tr>
+</table>
+</body>
+</html>

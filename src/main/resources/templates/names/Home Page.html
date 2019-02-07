@@ -1,8 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
     table, th, td {
   border: 2px solid black;
 }
@@ -131,13 +165,17 @@ span.psw {
 <h1>LHS CONNECTIONS</h1>
 
 <h3>What class do you need help with?</h3>
-<form method="post" style="max-width:1000px;">
-    <div class="form-group">
-        <label th:for="username"></label>
-        <input class="form-control" th:field="*{name}" />
-    <input type="submit" value="Enter" />
+<div class="dropdown">
+    <button class="dropbtn">Subject</button>
+    <div class="dropdown-content">
+        <a href="#">Mathematics</a>
+        <a href="#">Language</a>
+        <a href="#">Science</a>
+        <a href="#">Social Studies</a>
+        <a href="#">Engineering and Technology</a>
     </div>
-</form>
+</div>
+
 <table style='width:60%'>
     <tr>
         <th>Name</th>
