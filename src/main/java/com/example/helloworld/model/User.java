@@ -12,35 +12,36 @@ public class User {
     private String lastName;
     private String lindberghEmail;
     private int userId;
+    private String psw;
 
     private static int nextUserId = 1;
 
-    public User (String firstName, String lastName, String lindberghEmail, int gradeLevel) {
+    public User (String firstName, String psw) {
         userId = nextUserId;
         nextUserId++;
-
+        this.psw=psw;
         this.firstName = firstName;
-        this.lastName = lastName;
+//        this.lastName = lastName;
 
         //TODO -> add validation for entered lindbergh email (use regex???)
-        this.lindberghEmail = lindberghEmail;
-
-        switch (gradeLevel) {
-            case GL_FRESHMAN:
-                this.gradeLevel = "Freshman";
-                break;
-            case GL_SOPHOMORE:
-                this.gradeLevel = "Sophomore";
-                break;
-            case GL_JUNIOR:
-                this.gradeLevel = "Junior";
-                break;
-            case GL_SENIOR:
-                this.gradeLevel = "Senior";
-                break;
-            default:
-                this.gradeLevel = null;
-        }
+//        this.lindberghEmail = lindberghEmail;
+//
+//        switch (gradeLevel) {
+//            case GL_FRESHMAN:
+//                this.gradeLevel = "Freshman";
+//                break;
+//            case GL_SOPHOMORE:
+//                this.gradeLevel = "Sophomore";
+//                break;
+//            case GL_JUNIOR:
+//                this.gradeLevel = "Junior";
+//                break;
+//            case GL_SENIOR:
+//                this.gradeLevel = "Senior";
+//                break;
+//            default:
+//                this.gradeLevel = null;
+//        }
     }
 
     public String getGradeLevel() {
