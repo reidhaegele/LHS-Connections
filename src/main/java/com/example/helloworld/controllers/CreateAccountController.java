@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value = "create")
-public class CreateAccount {
+public class CreateAccountController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index() {
@@ -23,7 +23,7 @@ public class CreateAccount {
         User user = new User(name, psw);
         UserData.add(user);
         model.addAttribute("User", user);
-        return "names";
+        return "names/index";
     }
 }
 
