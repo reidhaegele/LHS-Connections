@@ -8,16 +8,15 @@
 </head>
 <body>
 <div class="container">
-    <label id="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+    <form method="post">
+        <label id="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required="required"/>
 
-    <label id="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+        <label id="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required="required"/>
 
-    <button type="submit" formaction="post">Login</button>
-    <label>
-        <input type="checkbox" checked="checked" name="remember"/> Remember me
-    </label>
+        <button type="submit">Login</button>
+    </form>
 </div>
 </body>
 </html>
