@@ -63,4 +63,8 @@ public class User {
     public int getUserId() {
         return userId;
     }
+
+    public String getPsw() {
+        return psw;
+    }
 }
