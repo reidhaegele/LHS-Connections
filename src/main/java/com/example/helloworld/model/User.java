@@ -1,5 +1,7 @@
 package com.example.helloworld.model;
 
+import java.util.ArrayList;
+
 public class User {
 
     public static final int GL_FRESHMAN = 1;
@@ -13,6 +15,8 @@ public class User {
     private String lindberghEmail;
     private int userId;
     private String psw;
+    private ArrayList<String> Classes;
+
 
     private static int nextUserId = 1;
 
