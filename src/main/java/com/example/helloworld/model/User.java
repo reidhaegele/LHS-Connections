@@ -1,17 +1,12 @@
 package com.example.helloworld.model;
 
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 
 public class User {
-
-    public static final int GL_FRESHMAN = 1;
-    public static final int GL_SOPHOMORE = 2;
-    public static final int GL_JUNIOR = 3;
-    public static final int GL_SENIOR = 4;
-
-    private String gradeLevel;
+    @Size(min = 9, max = 12)
+    private int gradeLevel;
     private String firstName;
-    private String lastName;
     private String lindberghEmail;
     private int userId;
     private String psw;
@@ -20,6 +15,7 @@ public class User {
 
     private static int nextUserId = 1;
 
+
     public User (String firstName, String psw) {
         userId = nextUserId;
         nextUserId++;
@@ -27,37 +23,14 @@ public class User {
         this.firstName = firstName;
 //        this.lastName = lastName;
 
-        //TODO -> add validation for entered lindbergh email (use regex???)
-//        this.lindberghEmail = lindberghEmail;
-//
-//        switch (gradeLevel) {
-//            case GL_FRESHMAN:
-//                this.gradeLevel = "Freshman";
-//                break;
-//            case GL_SOPHOMORE:
-//                this.gradeLevel = "Sophomore";
-//                break;
-//            case GL_JUNIOR:
-//                this.gradeLevel = "Junior";
-//                break;
-//            case GL_SENIOR:
-//                this.gradeLevel = "Senior";
-//                break;
-//            default:
-//                this.gradeLevel = null;
-//        }
     }
 
-    public String getGradeLevel() {
+    public int getGradeLevel() {
         return gradeLevel;
     }
 
     public String getFirstName() {
         return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public String getLindberghEmail() {
@@ -70,5 +43,29 @@ public class User {
 
     public String getPsw() {
         return psw;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLindberghEmail(String lindberghEmail) {
+        this.lindberghEmail = lindberghEmail;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setPsw(String psw) {
+        this.psw = psw;
+    }
+
+    public void setClasses(ArrayList<String> classes) {
+        Classes = classes;
+    }
+
+    public static void setNextUserId(int nextUserId) {
+        User.nextUserId = nextUserId;
     }
 }
