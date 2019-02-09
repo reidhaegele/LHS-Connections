@@ -19,8 +19,8 @@ public class CreateAccountController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String createAcc(Model model, @RequestParam("uname") String name, @RequestParam("psw") String psw) {
-        User user = new User(name, psw);
+    public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw, @RequestParam("fname") String fname, @RequestParam("lname") String lname, @RequestParam("contact") String contact) {
+        User user = new User(uname, psw);
         UserData.add(user);
         model.addAttribute("User", user);
         return "names/index";
