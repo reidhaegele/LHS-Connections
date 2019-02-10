@@ -24,8 +24,12 @@ public class CreateAccountController {
         ArrayList<String> classList = new ArrayList<String>(0);
         int l = 0;
         while(!classes.equals("")) {
-            classList.add(classes.substring(0, classes.indexOf(',')));
-            classes = classes.substring(classes.indexOf(','));
+            if(classes.contains(",")) {
+                classList.add(classes.substring(0, classes.indexOf(',')));
+                classes = classes.substring(classes.indexOf(','));
+            }
+            else
+                classList.add(classes);
         }
         User user = new User(uname, psw, grade, contact, fname, lname, classList);
         UserData.add(user);
