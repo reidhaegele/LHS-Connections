@@ -32,17 +32,13 @@ public class Post {
         return postTime;
     }
 
-    public String getPrettyDate() {
+    public String getDate() {
         SimpleDateFormat formatter = new SimpleDateFormat("EEEEEEEEE MMMMMMMMM dd, yyyy @ hh:mm:ss aa");
-        String prettyDate = formatter.format(this.getPostTime());
-
-        return prettyDate;
+        return formatter.format(this.getPostTime());
     }
 
     public String getTimeOnly() {
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm:ss: aa");
-        String timeOnlyDate = formatter.format(this.getPostTime());
-
-        return timeOnlyDate;
+        return formatter.format(this.getPostTime());
     }
 }

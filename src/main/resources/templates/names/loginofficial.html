@@ -2,11 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
+<nav th:replace="fragments :: navigation"></nav>
 <body>
+<h1>Login</h1>
 <div class="container">
     <form method="post">
         <label id="uname"><b>Username</b></label>
@@ -14,6 +12,8 @@
 
         <label id="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+
+        <p>Don't have an Account? <a href="/create">Create one.</a></p>
 
         <button type="submit">Login</button>
     </form>
