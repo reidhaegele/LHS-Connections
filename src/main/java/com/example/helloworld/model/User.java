@@ -10,34 +10,10 @@ public class User {
     private String grade;
     private String contact;
     private String dname;
-    public ArrayList<String> Subjects;
-    private ArrayList<String> Classes;
+    public ArrayList<String> Subjects = new ArrayList<String>(0);
+    private ArrayList<String> Classes = new ArrayList<String>(0);
 
     private static int nextUserId = 1;
-
-    public User(String uname, String psw, String grade, String contact,
-                String fname, String lname) {
-        //ID
-        userId = nextUserId;
-        nextUserId++;
-        //REQUIRED INFO
-        this.uname = uname;
-        this.psw = psw;
-        this.grade = grade;
-        this.contact = contact;
-        //DISPLAY NAME INFO
-        if (fname.equals("") && lname.equals(""))
-            dname = uname;
-        else if (lname.equals(""))
-            dname = fname;
-        else if (fname.equals(""))
-            dname = lname;
-        else
-            dname = fname + " " + lname;
-        //NON TUTOR
-        Subjects.add("");
-        Classes.add("");
-    }
 
     public User(String uname, String psw, String grade, String contact,
                 String fname, String lname, ArrayList<String> Subjects, ArrayList<String> Classes) {
@@ -58,9 +34,15 @@ public class User {
             dname = lname;
         else
             dname = fname + " " + lname;
-        //TUTOR
-        this.Subjects = Subjects;
-        this.Classes = Classes;
+        //TUTORING INFO
+        if (Subjects.isEmpty()) {
+            this.Subjects.add("");
+            this.Classes.add("");
+        }
+        else {
+            this.Subjects = Subjects;
+            this.Classes = Classes;
+        }
     }
 
     public void setUserId(int userId) {
