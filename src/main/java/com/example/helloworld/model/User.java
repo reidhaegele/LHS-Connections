@@ -10,13 +10,12 @@ public class User {
     private String grade;
     private String contact;
     private String dname;
-    public ArrayList<String> Subjects = new ArrayList<String>(0);
-    private ArrayList<String> Classes = new ArrayList<String>(0);
+    private ArrayList<String> classes = new ArrayList<String>(0);
 
     private static int nextUserId = 1;
 
     public User(String uname, String psw, String grade, String contact,
-                String fname, String lname, ArrayList<String> Subjects, ArrayList<String> Classes) {
+                String fname, String lname, ArrayList<String> classes) {
         //ID
         userId = nextUserId;
         nextUserId++;
@@ -35,14 +34,10 @@ public class User {
         else
             dname = fname + " " + lname;
         //TUTORING INFO
-        if (Subjects.isEmpty()) {
-            this.Subjects.add("");
-            this.Classes.add("");
-        }
-        else {
-            this.Subjects = Subjects;
-            this.Classes = Classes;
-        }
+        if (classes.isEmpty())
+            this.classes.add("");
+        else
+            this.classes = classes;
     }
 
     public void setUserId(int userId) {
@@ -69,12 +64,8 @@ public class User {
         this.psw = psw;
     }
 
-    public void setSubjects(ArrayList<String> subjects) {
-        Subjects = subjects;
-    }
-
-    public void setClasses(ArrayList<String> classes) {
-        Classes = classes;
+    public void setclasses(ArrayList<String> classes) {
+        classes = classes;
     }
 
     public int getUserId() {
@@ -101,12 +92,8 @@ public class User {
         return dname;
     }
 
-    public ArrayList<String> getSubjects() {
-        return Subjects;
-    }
-
-    public ArrayList<String> getClasses() {
-        return Classes;
+    public ArrayList<String> getclasses() {
+        return classes;
     }
 
     public static int getNextUserId() {
