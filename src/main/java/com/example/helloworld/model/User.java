@@ -1,18 +1,67 @@
 package com.example.helloworld.model;
 
 import java.util.ArrayList;
-//Math (Algebra 1, Algebra 2, Geometry, Trigonometry, Calculus)
-//Science (Biology, Chemistry, Physics, Environmental Science)
-//Social Studies (World History, U.S. History, U.S. Government, Psychology, Sociology, Geography)
-//Language Arts (Literature, Language)
-//Foreign Language (Spanish, German, French)
-//Engineering (Design, Architecture, Digital Electronics, Programming)
+
 public class User {
 
     private int userId;
+    private String uname;
+    private String psw;
     private String grade;
-    private String fname;
-    private String lname;
+    private String contact;
+    private String dname;
+    public ArrayList<String> Subjects;
+    private ArrayList<String> Classes;
+
+    private static int nextUserId = 1;
+
+    public User(String uname, String psw, String grade, String contact,
+                String fname, String lname) {
+        //ID
+        userId = nextUserId;
+        nextUserId++;
+        //REQUIRED INFO
+        this.uname = uname;
+        this.psw = psw;
+        this.grade = grade;
+        this.contact = contact;
+        //DISPLAY NAME INFO
+        if (fname.equals("") && lname.equals(""))
+            dname = uname;
+        else if (lname.equals(""))
+            dname = fname;
+        else if (fname.equals(""))
+            dname = lname;
+        else
+            dname = fname + " " + lname;
+        //NON TUTOR
+        Subjects.add("");
+        Classes.add("");
+    }
+
+    public User(String uname, String psw, String grade, String contact,
+                String fname, String lname, ArrayList<String> Subjects, ArrayList<String> Classes) {
+        //ID
+        userId = nextUserId;
+        nextUserId++;
+        //REQUIRED INFO
+        this.uname = uname;
+        this.psw = psw;
+        this.grade = grade;
+        this.contact = contact;
+        //DISPLAY NAME INFO
+        if (fname.equals("") && lname.equals(""))
+            dname = uname;
+        else if (lname.equals(""))
+            dname = fname;
+        else if (fname.equals(""))
+            dname = lname;
+        else
+            dname = fname + " " + lname;
+        //TUTOR
+        this.Subjects = Subjects;
+        this.Classes = Classes;
+    }
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -22,12 +71,8 @@ public class User {
         this.grade = grade;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setFname(String dname) {
+        this.dname = dname;
     }
 
     public void setContact(String contact) {
@@ -50,68 +95,39 @@ public class User {
         Classes = classes;
     }
 
-    public static void setNextUserId(int nextUserId) {
-        User.nextUserId = nextUserId;
-    }
-
-    private String contact;
-    private String uname;
-    private String psw;
-    public ArrayList<String> Subjects;
-    private ArrayList<String> Classes;
-
-    private static int nextUserId = 1;
-
-    public User (String firstName, String psw) {
-        Subjects.add("Math");
-        userId = nextUserId;
-        nextUserId++;
-        this.psw=psw;
-        this.firstName = firstName;
-//        this.lastName = lastName;
-
-        //TODO -> add validation for entered lindbergh email (use regex???)
-//        this.lindberghEmail = lindberghEmail;
-//
-//        switch (gradeLevel) {
-//            case GL_FRESHMAN:
-//                this.gradeLevel = "Freshman";
-//                break;
-//            case GL_SOPHOMORE:
-//                this.gradeLevel = "Sophomore";
-//                break;
-//            case GL_JUNIOR:
-//                this.gradeLevel = "Junior";
-//                break;
-//            case GL_SENIOR:
-//                this.gradeLevel = "Senior";
-//                break;
-//            default:
-//                this.gradeLevel = null;
-//        }
-    }
-
-    public String getGradeLevel() {
-        return gradeLevel;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getLindberghEmail() {
-        return lindberghEmail;
-    }
-
     public int getUserId() {
         return userId;
     }
 
+    public String getUname() {
+        return uname;
+    }
+
     public String getPsw() {
         return psw;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public String getDname() {
+        return dname;
+    }
+
+    public ArrayList<String> getSubjects() {
+        return Subjects;
+    }
+
+    public ArrayList<String> getClasses() {
+        return Classes;
+    }
+
+    public static int getNextUserId() {
+        return nextUserId;
     }
 }
