@@ -165,15 +165,17 @@ span.psw {
 <h1>LHS CONNECTIONS</h1>
 
 <h3>What class do you need help with?</h3>
-<div class="dropdown">
-    <button class="dropbtn">Subject</button>
-    <div class="dropdown-content">
-        <a href="#">Mathematics</a>
-        <a href="#">Language</a>
-        <a href="#">Science</a>
-        <a href="#">Social Studies</a>
-        <a href="#">Engineering and Technology</a>
-    </div>
+<div></div>
+    <form method="post">
+        <input list = "classes" name="browser">
+    <datalist id = "classes">
+        <option value = "Programming"/>
+        <option value = "Algebra"/>
+        <option value = "Algebra 2"/>
+        <option value = "Calculus"/>
+    </datalist>
+        <input type="submit">
+    </form>
 </div>
 
 <table style='width:60%'>
@@ -182,16 +184,12 @@ span.psw {
         <th>Name</th>
         <th>Classes offered</th>
     </tr>
-    <tr>
-        <td>John Doe</td>
+    <tr th:each="user:${users}">
+        <td></td>
         <td>Math through pre calc</td>
         <td align = "center"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User Profile</button></td>
     </tr>
-    <tr>
-        <td>Jane Doe</td>
-        <td>Algebra 1 and 2</td>
-        <td align = "center"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User Profile</button></td>
-    </tr>
+
 </table>
 </body>
 </html>

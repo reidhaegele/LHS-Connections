@@ -9,13 +9,44 @@
 <body>
 <div class="container">
     <form method="post">
-        <label id="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+        <div>
+            <label id="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+        </div>
+        <div>
+            <label id="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+        </div>
+        <div>
+            <label id="grade"><b>Grade</b></label>
+            <input type="grade" placeholder="Enter Grade" name="grade" required="required"/>
+        </div>
+        <div>
+            <label id="contact"><b>Email</b></label>
+            <input type="text" placeholder="Enter Contact Email" name="contact" required="required"/>
+        </div>
+        <div>
+            <label id="fname"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="fname"/>
+        </div>
+        <div>
+            <label id="lname"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lname"/>
+        </div>
+        <div>
+            <h4>COuld ya help kiddos with any classes?</h4>
+                <input list = "classes" name="browser"/>
+                <datalist id = "classes">
+                    <option value = "Programming"/>
+                    <option value = "Algebra"/>
+                    <option value = "Algebra 2"/>
+                    <option value = "Calculus"/>
+                </datalist>
+        </div>
 
-        <label id="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required="required"/>
-
-        <button type="submit">Create</button>
+        <div>
+            <button type="submit">Create</button>
+        </div>
     </form>
 </div>
 </body>

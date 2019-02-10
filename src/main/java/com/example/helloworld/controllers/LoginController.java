@@ -34,7 +34,7 @@ public class LoginController {
         // do whatever you do to log in
 
         for (User user:UserData.getAll()) {
-            if (user.getFirstName().equals(name) && user.getPsw().equalsIgnoreCase(psw))
+            if (user.getUname().equals(name) && user.getPsw().equalsIgnoreCase(psw))
                 return "names/home";
         }
         return "names/loginofficial";
