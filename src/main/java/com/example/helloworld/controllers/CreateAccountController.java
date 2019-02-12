@@ -23,14 +23,12 @@ public class CreateAccountController {
     public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw, @RequestParam("grade") String grade, @RequestParam("contact") String contact, @RequestParam("fname") String fname, @RequestParam("lname") String lname, @RequestParam("classes") String classes) {
         ArrayList<String> classList = new ArrayList<String>(0);
         int l = 0;
-        while(!classes.equals("")) {
-            if(classes.contains(",")) {
-                classList.add(classes.substring(0, classes.indexOf(',')));
-                classes = classes.substring(classes.indexOf(','));
-            }
-            else
-                classList.add(classes);
+        while (classes.contains(","))
+        {
+            classList.add(classes.substring(0, classes.indexOf(",")));
+            classes = classes.substring(0, classes.indexOf(","));
         }
+        classList.add(classes);
         User user = new User(uname, psw, grade, contact, fname, lname, classList);
         UserData.add(user);
         model.addAttribute("User", user);
