@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<head>
+    <meta charset="UTF-8"/>
+    <title>UserProfile</title>
+</head>
+<body>
+<h2 th: text = "${user.dname}, ${user.grade}">Unknown User, Unknown Grade</h2>
+<div>
+    <h4>What I can help you with: </h4>
+    <th:block th:each="class:${user.classes}">
+        <div th:text="${class}">
+            Unknown Class
+        </div>
+    </th:block>
+</div>
+<div>
+    <h4>How you can contact me:</h4>
+    <p th:text="${user.contact}">Unknown Contact Info</p>
+</div>
+</body>
+</html>
