@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "login")
+@RequestMapping(value = "")
 public class LoginController {
     /*
     @GetMapping("/")
@@ -35,7 +35,7 @@ public class LoginController {
 
         for (User user:UserData.getAll()) {
             if (user.getUname().equals(name) && user.getPsw().equalsIgnoreCase(psw))
-                return "names/home";
+                return "names/homeOfficial";
         }
         return "names/loginofficial";
     }
