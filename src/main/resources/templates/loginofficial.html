@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <form method="post">
+        <div align="center">
+            <div>
+                <p>
+                    LHS CONNECTIONS - LOGIN
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label id="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+                </p>
+            </div>
+            <div>
+                <p align="center">
+                    <label id="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+                </p>
+            </div>
+            <p>
+                <button type="submit">Login</button>
+            </p>
+            <div>
+                <p>
+                    <a href="create">Don't have an account?</a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

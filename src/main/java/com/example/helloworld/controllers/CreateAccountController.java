@@ -16,7 +16,7 @@ public class CreateAccountController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index() {
-        return "names/createofficial";
+        return "createofficial";
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
@@ -32,7 +32,7 @@ public class CreateAccountController {
         User user = new User(uname, psw, grade, contact, fname, lname, classList);
         UserData.add(user);
         model.addAttribute("User", user);
-        return "names/index";
+        return "index";
     }
 }
 

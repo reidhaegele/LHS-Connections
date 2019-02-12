@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping(value = "names")
+@RequestMapping(value = "")
 public class IndexController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
         UserData.add(new User("John Doe", "password", "11", "butt@gmail.com", "", "", new ArrayList(0)));
         model.addAttribute("title", "Users");
-        return "names/index";
+        return "index";
     }
 }
