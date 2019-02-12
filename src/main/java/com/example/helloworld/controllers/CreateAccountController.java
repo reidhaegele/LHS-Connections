@@ -31,8 +31,7 @@ public class CreateAccountController {
         classList.add(classes);
         User user = new User(uname, psw, grade, contact, fname, lname, classList);
         UserData.add(user);
-        model.addAttribute("User", user);
-        return "index";
+        return "redirect:";
     }
 }
 

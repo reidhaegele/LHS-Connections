@@ -16,6 +16,7 @@ public class IndexController {
     public String index(Model model) {
         UserData.add(new User("John Doe", "password", "11", "butt@gmail.com", "", "", new ArrayList(0)));
         model.addAttribute("title", "Users");
-        return "index";
+        model.addAttribute("Users", UserData.getAll());
+        return "homeofficial";
     }
 }
