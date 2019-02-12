@@ -1,0 +1,48 @@
+.header {
+    background-color: #1eb023;
+}
+
+.div-content {
+    background-color: lightgrey;
+    margin: auto;
+}
+
+.body-content {
+    margin-top: 72px;
+    background-color: #e4e4e4;
+}
+
+td, th {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #e4e4e4;
+}
+
+table.user-listing {
+    margin: 30px auto;
+    border: 1px solid #e4e4e4;
+    width: 80%;
+}
+
+table.user-listing td:first-child {
+    font-weight: bold;
+}
+
+table.user-listing td:last-child {
+    width: 80%;
+}
+
+label {
+    margin-right: 15px;
+}
+
+ul.form-group {
+    padding: 0;
+}
+
+ul.form-group li {
+    display: inline-block;
+    padding-right: 15px;
+}

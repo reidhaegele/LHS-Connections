@@ -2,18 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<head>
-    <meta charset="UTF-8"/>
-    <title>Login</title>
-</head>
-<body>
-<div class="container">
+<!--<head class="header">-->
+    <!--<meta charset="UTF-8"/>-->
+    <!--<title class="header h1">LHS CONNECTIONS - LOGIN</title>-->
+<!--</head>-->
+<nav th:replace="fragments :: navigation"></nav>
+<body class="body">
+<div class="container body-content">
     <form method="post">
-        <div align="center">
+        <div align="center" class="div-content">
             <div>
-                <p>
+                <h1 class="header">
                     LHS CONNECTIONS - LOGIN
-                </p>
+                </h1>
             </div>
             <div>
                 <p>

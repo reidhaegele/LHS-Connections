@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Homepage</title>
 </head>
+<nav th:replace="fragments :: navigation"></nav>
 <body>
 <h1>Homepage</h1>
 <form method="post">
@@ -13,7 +14,7 @@
     </div>
 </form>
 
-<table class="table">
+<table class="user-listing">
     <th:block th:each="user:${Users}">
     <tr th:text="${user.uname}"></tr>
     </th:block>
