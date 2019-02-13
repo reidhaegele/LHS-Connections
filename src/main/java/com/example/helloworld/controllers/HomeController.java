@@ -16,7 +16,7 @@ public class HomeController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
         UserData.add(new User("John Doe", "password", "11", "butt@gmail.com", "", "", new ArrayList(0)));
-        UserData.add(new User("benrieth19", "password", "12", "19benriethmeier@lindberghschools.ws", "Ben", "Riethmeier", new ArrayList<String>())
+        UserData.add(new User("benrieth19", "password", "12", "19benriethmeier@lindberghschools.ws", "Ben", "Riethmeier", new ArrayList<String>()));
         UserData.add(new User("REID_HAEGELE", "password", "12", "20reidhaegele@lindberghschools.ws", "Reid", "", new ArrayList<String>()));
         UserData.add(new User("", "", "", "", "", "", new ArrayList<String>()));
         UserData.add(new User("", "", "", "", "", "", new ArrayList<String>()));
