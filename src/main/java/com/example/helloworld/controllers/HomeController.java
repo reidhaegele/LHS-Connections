@@ -4,6 +4,7 @@ import com.example.helloworld.model.User;
 import com.example.helloworld.model.UserData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,8 +42,8 @@ public class HomeController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String index(@RequestParam("searchParam") String searchParam, Model model) {
         ArrayList<User> users = new ArrayList<>();
-        for (User user:UserData.getAll()) {
-            for (String course:user.getclasses()) {
+        for (User user : UserData.getAll()) {
+            for (String course : user.getclasses()) {
                 if (searchParam.equalsIgnoreCase(course)) {
                     users.add(user);
                 }
@@ -50,5 +51,12 @@ public class HomeController {
         }
         model.addAttribute("SearchedUsers", users);
         return "homeofficial";
+    }
+
+    @RequestMapping(value = "/{id}")
+    public String profile(@PathVariable("id") int id, Model model) {
+        System.out.println("Made it here------------------");
+        model.addAttribute("user", UserData.getById(id));
+        return "userprofileofficial";
     }
 }
