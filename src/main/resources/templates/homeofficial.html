@@ -20,7 +20,7 @@
 
 <table class="user-listing">
     <th:block th:each="user:${Users}">
-    <tr th:text="${user.uname}"></tr>
+    <tr th:href="/accounts/${user.uname}"></tr>
     </th:block>
 </table>
 </body>
