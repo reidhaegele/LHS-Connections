@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping(value = "")
+@RequestMapping(value = "home")
 public class IndexController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
