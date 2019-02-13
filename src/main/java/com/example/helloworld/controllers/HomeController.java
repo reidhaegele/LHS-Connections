@@ -17,7 +17,7 @@ public class HomeController {
     public String index(Model model) {
         //upperclassmen
         UserData.add(new User("jadejade", "password", "12", "19jadewiley@lindberghschools.ws", "jade", "is cool", new ArrayList(0)));
-        UserData.add(new User("benrieth19", "password", "12", "19benriethmeier@lindberghschools.ws", "Ben", "Riethmeier", new ArrayList<String>())
+        UserData.add(new User("benrieth19", "password", "12", "19benriethmeier@lindberghschools.ws", "Ben", "Riethmeier", new ArrayList<String>()));
         UserData.add(new User("REID_HAEGELE", "password", "11", "20reidhaegele@lindberghschools.ws", "Reid", "", new ArrayList<String>()));
         UserData.add(new User("peterkorenak", "password", "12", "19peterkorenak@lindberghschools.ws", "", "", new ArrayList<String>()));
         UserData.add(new User("jCourson", "password", "12", "19joncourson@lindberghschools.ws", "jon", "courson", new ArrayList<String>()));
