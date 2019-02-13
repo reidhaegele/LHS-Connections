@@ -20,7 +20,7 @@ public class LoginController {
 
         for (User user:UserData.getAll()) {
             if (user.getUname().equals(name) && user.getPsw().equalsIgnoreCase(psw))
-                return "homeOfficial";
+                return "redirect:home";
         }
         return "loginofficial";
     }

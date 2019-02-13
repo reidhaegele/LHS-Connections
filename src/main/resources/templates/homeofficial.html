@@ -17,8 +17,12 @@
         <button type="submit">Search</button>
 
 </form>
-
-<table class="user-listing">
+<table class="user-listing" th:if="${not #lists.isEmpty(SearchedUsers)}">
+    <th:block th:each="user:${SearchedUsers}">
+        <tr th:text="${user.uname}"></tr>
+    </th:block>
+</table>
+<table class="user-listing" th:unless="${#lists.isEmpty(SearchedUsers)}">
     <th:block th:each="user:${Users}">
     <tr th:text="${user.uname}"></tr>
     </th:block>
