@@ -7,7 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "")
+
+@RequestMapping(value = "login")
 public class LoginController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index() {

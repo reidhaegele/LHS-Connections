@@ -92,7 +92,9 @@ public class User {
         return dname;
     }
 
-    public ArrayList<String> getclasses() {
+    public ArrayList<String> getClasses() {
+        for(int i = 0; i < classes.size(); i++)
+            System.out.println(classes.get(i));
         return classes;
     }
 

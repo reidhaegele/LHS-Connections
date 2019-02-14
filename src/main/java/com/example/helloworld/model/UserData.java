@@ -17,8 +17,6 @@ public class UserData {
     public static void add(User newUser) {
         user.add(newUser);
     }
-
-    // getById
     public static User getById(int id) {
 
         User theUser = null;

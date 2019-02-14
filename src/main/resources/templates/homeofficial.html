@@ -17,19 +17,22 @@
     <button type="submit">Search</button>
 
 </form>
-<table class="user-listing" th:if="${not #lists.isEmpty(SearchedUsers)}">
-    <th:block th:each="user:${SearchedUsers}">
-        <a th:href="@{'home/'+${user.getUserId()}}">
-            <tr th:text="${user.uname}"></tr>
-        </a>
-    </th:block>
-</table>
-<table class="user-listing" th:unless="${#lists.isEmpty(SearchedUsers)}">
-    <th:block th:each="user:${Users}">
-        <a th:href="@{'home/'+${user.getUserId()}}">
-            <tr th:text="${user.uname}"></tr>
-        </a>
-    </th:block>
-</table>
+
+<div>
+    <h4>Search Results</h4>
+    <table th:unless="${#lists.isEmpty(SearchedUsers)}">
+        <th >
+        <td>Tutor Names</td>
+        </th>
+        <tr th:each="user:${SearchedUsers}">
+
+         <td><a  th:text="${user.uname}"  th:href="@{'home/'+${user.getUserId()}}"> </a></td>
+
+        </tr>
+    </table>
+    <div th:if="${#lists.isEmpty(SearchedUsers)}">
+        <p>No tutors!</p>
+    </div>
+</div>
 </body>
 </html>

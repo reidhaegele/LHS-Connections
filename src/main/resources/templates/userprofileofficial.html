@@ -9,17 +9,18 @@
 <h2 th:text="${user.dname} + ', ' + ${user.grade}">Unknown User, Unknown Grade</h2>
 <div>
     <h4>What I can help you with: </h4>
-    <h5>For now, nothing</h5>
-    <!--<table class="classesOffered" th:if="${not #lists.isEmpty(user.classes)}">
-        <th:block th:each="class:${classes}">
-                <tr th:text="class"></tr>
-        </th:block>
+
+    <table th:unless="${#lists.isEmpty(user.getClasses())}">
+        <th >
+            <td>Class Name</td>
+        </th>
+        <tr th:each="foo:${user.getClasses()}">
+            <td th:text="${foo}"></td>
+        </tr>
     </table>
-    <table class="ClassesOffered" th:unless="${#lists.isEmpty(classes)}">
-        <th:block th:each="class:${classes}">
-                <tr th:text="class"></tr>
-        </th:block>
-    </table>-->
+    <div th:if="${#lists.isEmpty(user.getClasses())}">
+        <p>No classes!</p>
+    </div>
 </div>
 <div>
     <h4>How you can contact me:</h4>
