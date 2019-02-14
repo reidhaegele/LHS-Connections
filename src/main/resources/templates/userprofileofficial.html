@@ -6,14 +6,20 @@
     <title>UserProfile</title>
 </head>
 <body>
-<h2 th:text = "${user.dname} + ', ' + ${user.grade}">Unknown User, Unknown Grade</h2>
+<h2 th:text="${user.dname} + ', ' + ${user.grade}">Unknown User, Unknown Grade</h2>
 <div>
     <h4>What I can help you with: </h4>
-    <!--<th:block th:each="class:${user.classes}">-->
-        <!--<p th:text="${class}">-->
-            <!--Unknown Class-->
-        <!--</p>-->
-    <!--</th:block>-->
+    <h5>For now, nothing</h5>
+    <!--<table class="classesOffered" th:if="${not #lists.isEmpty(user.classes)}">
+        <th:block th:each="class:${classes}">
+                <tr th:text="class"></tr>
+        </th:block>
+    </table>
+    <table class="ClassesOffered" th:unless="${#lists.isEmpty(classes)}">
+        <th:block th:each="class:${classes}">
+                <tr th:text="class"></tr>
+        </th:block>
+    </table>-->
 </div>
 <div>
     <h4>How you can contact me:</h4>
