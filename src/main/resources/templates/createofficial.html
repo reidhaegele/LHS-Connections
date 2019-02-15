@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
 <h1>Create an Account</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 <body>
+<script type="text/javascript">
+    $(function() {
+        $(".chzn-select").chosen();
+    });
+</script>
+<script>
+    $(function() {
+        $("#selectid").on("change", function() {
+            var selected = $("option:selected", this).map(function() {
+                return $(this).text();
+            }).toArray().join(", ");
+
+            console.log(selected);
+        });
+    });
+  </script>
 <div class="container">
     <form method="post">
         <div>
@@ -32,8 +58,51 @@
             <input type="text" placeholder="Enter Last Name" name="lname"/>
         </div>
         <div>
-            <label id="classes"><b>Could you help others with any classes?</b></label>
-            <input type="text" placeholder="Classes" name="classes"/>0
+            <label id="classes"><b>Classes you tutor (if any):</b><br/></label>
+            <select class="chzn-select" multiple="true" name="faculty" style="width:200px;">
+                <optgroup label='Mathematics'>
+                    <option value='Algebra'>Algebra</option>
+                    <option value='Geometry'>Geometry</option>
+                    <option value='Statistics'>Statistics</option>
+                    <option value='Trigonometry'>Trigonometry</option>
+                    <option value='Precalculus'>Precalculus</option>
+                    <option value='Calculus'>Calculus</option>
+                </optgroup>
+                <optgroup label='Science'>
+                    <option value='Biology'>Biology</option>
+                    <option value='Chemistry'>Chemistry</option>
+                    <option value='Physics'>Physics</option>
+                    <option value='Environmental Science'>Environmental Science</option>
+                    <option value='Physical Science'>Physical Science</option>
+                </optgroup>
+                <optgroup label='Social Studies'>
+                    <option value='World History'>World History</option>
+                    <option value='Government'>Government</option>
+                    <option value='U.S. History'>U.S. History</option>
+                    <option value='Human Geography'>Human Geography</option>
+                    <option value='Global Politics'>Global Politics</option>
+                    <option value='Psychology'>Psychology</option>
+                    <option value='Sociology'>Sociology</option>
+                </optgroup>
+                <optgroup label='Language Arts'>
+                    <option value='General English'>General English</option>
+                    <option value='Literature'>Literature</option>
+                    <option value='Language'>Language</option>
+                </optgroup>
+                <optgroup label='Foreign Language'>
+                    <option value='Spanish'>Spanish</option>
+                    <option value='French'>French</option>
+                    <option value='German'>German</option>
+                </optgroup>
+                <optgroup label='Engineering'>
+                    <option value='Principles of Engineering'>Principles of Engineering</option>
+                    <option value='Architecture'>Architecture</option>
+                    <option value='Digital Electronics'>Digital Electronics</option>
+                    <option value='Networking'>Networking</option>
+                    <option value='Web Design'>Web Design</option>
+                    <option value='Programming'>Programming</option>
+                </optgroup>
+            </select>
         </div>
         <div>
             <button type="submit">Create</button>

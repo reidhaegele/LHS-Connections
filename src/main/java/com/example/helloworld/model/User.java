@@ -93,11 +93,8 @@ public class User {
     }
 
     public ArrayList<String> getClasses() {
-        for(int i = 0; i < classes.size(); i++)
-            System.out.println(classes.get(i));
         return classes;
     }
-
     public static int getNextUserId() {
         return nextUserId;
     }
