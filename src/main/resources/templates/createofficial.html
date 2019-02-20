@@ -32,52 +32,24 @@
             <input type="text" placeholder="Enter Last Name" name="lname"/>
         </div>
         <div>
-            <label id="classes"><b>Classes you tutor (if any):</b><br/></label>
-            <select class="chzn-select" multiple="true" name="faculty" style="width:200px;">
-                <optgroup label='Mathematics'>
-                    <option value='Algebra'>Algebra</option>
-                    <option value='Geometry'>Geometry</option>
-                    <option value='Statistics'>Statistics</option>
-                    <option value='Trigonometry'>Trigonometry</option>
-                    <option value='Precalculus'>Precalculus</option>
-                    <option value='Calculus'>Calculus</option>
-                </optgroup>
-                <optgroup label='Science'>
-                    <option value='Biology'>Biology</option>
-                    <option value='Chemistry'>Chemistry</option>
-                    <option value='Physics'>Physics</option>
-                    <option value='Environmental Science'>Environmental Science</option>
-                    <option value='Physical Science'>Physical Science</option>
-                </optgroup>
-                <optgroup label='Social Studies'>
-                    <option value='World History'>World History</option>
-                    <option value='Government'>Government</option>
-                    <option value='U.S. History'>U.S. History</option>
-                    <option value='Human Geography'>Human Geography</option>
-                    <option value='Global Politics'>Global Politics</option>
-                    <option value='Psychology'>Psychology</option>
-                    <option value='Sociology'>Sociology</option>
-                </optgroup>
-                <optgroup label='Language Arts'>
-                    <option value='General English'>General English</option>
-                    <option value='Literature'>Literature</option>
-                    <option value='Language'>Language</option>
-                </optgroup>
-                <optgroup label='Foreign Language'>
-                    <option value='Spanish'>Spanish</option>
-                    <option value='French'>French</option>
-                    <option value='German'>German</option>
-                </optgroup>
-                <optgroup label='Engineering'>
-                    <option value='Principles of Engineering'>Principles of Engineering</option>
-                    <option value='Architecture'>Architecture</option>
-                    <option value='Digital Electronics'>Digital Electronics</option>
-                    <option value='Networking'>Networking</option>
-                    <option value='Web Design'>Web Design</option>
-                    <option value='Programming'>Programming</option>
-                </optgroup>
-            </select>
+        <span>
+   <input id="science" name="science" type="checkbox" value="science" checked="checked"/>
+   <label for="science">Science</label>
+    </span>
+        <span>
+   <input id="math" name="math" type="checkbox" value="math"/>
+   <label for="math">Math</label>
+    </span>
+        <span>
+   <input id="english" name="english" type="checkbox" value="english" checked="checked"/>
+   <label for="english">English</label>
+    </span>
+        <span>
+   <input id="history" name="history" type="checkbox" value="history"/>
+   <label for="history">History</label>
+        </span>
         </div>
+        <input type="hidden" name="_favoriteFrameworks" value="on"/>
         <div>
             <button type="submit">Create</button>
         </div>
