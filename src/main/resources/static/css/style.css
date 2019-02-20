@@ -11,6 +11,9 @@
 
    body{
     background-image: url("Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
    }
    img{
    margin: 25px 8px
@@ -24,8 +27,39 @@
      text-decoration: none;
      display: inline-block;
      font-size: 16px;
-     margin: 25px 8px
+     margin: 25px 8px;
+     border-radius:4px;
    }
+   input{
+   border-radius:4px;
+   }
+   .search{
+    padding: 10px 10px 20px 10px;
+           opacity: .86;
+           background-color: #009628;
+           width: 1000px;
+           margin: auto;
+           border-radius:4px;
+   }
+   .homeSearch[type=text]{
+        width:85%;
+        padding: 6px 10px;
+        border: 2px solid gray;
+        border-radius: 4px;
+   }
+   .searchButton {
+        background-color: #009628; /* Green */
+        border: none;
+        color: white;
+        padding: 6px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 15px 8px;
+        border: 2px solid white;
+        border-radius:4px;
+      }
    .loginBody{
 
    }
@@ -35,6 +69,7 @@
        background-color: #009628;
        width: 400px;
        margin: auto;
+       border-radius:4px;
    }
    header h2
    {

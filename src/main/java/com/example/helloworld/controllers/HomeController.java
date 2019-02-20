@@ -45,7 +45,6 @@ public class HomeController {
 
     @RequestMapping(value = "/{id}")
     public String profile(@PathVariable("id") int id, Model model) {
-        System.out.println("Made it here------------------");
         model.addAttribute("user", UserData.getById(id));
         return "userprofileofficial";
     }

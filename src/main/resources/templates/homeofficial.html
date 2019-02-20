@@ -3,27 +3,38 @@
 <head th:replace="fragments :: head"></head>
 <nav th:replace="fragments :: navigation"></nav>
 <body>
-<h1>Homepage</h1>
-<form method="post">
+<p align="center">
+    <img src="http://localhost:8080/css/lhsConnections.png" alt="m" width="200"/>
+</p>
+<form method="post" class="search">
     <div>
-        <label id="searchParam"><b>Search for a class you need help with</b></label>
+        <p align="center">
+            <label id="searchParam"><b>Search for a class you need help with</b></label>
+        </p>
     </div>
     <div>
-        <input type="text" placeholder="Enter Class" name="searchParam"/>
+        <p align="center">
+            <input class="homeSearch" type="text" placeholder="Enter Class" name="searchParam"/>
+            <div>
+        <p align="center">
+            <button class="searchButton" type="submit">Search</button>
+        </p>
     </div>
-    <button type="submit">Search</button>
+    </p>
+    </div>
+
 
 </form>
 
 <div>
     <h4>Search Results</h4>
     <table th:unless="${#lists.isEmpty(SearchedUsers)}">
-        <th >
+        <th>
         <td>Tutor Names</td>
         </th>
         <tr th:each="user:${SearchedUsers}">
 
-         <td><a  th:text="${user.uname}"  th:href="@{'home/'+${user.getUserId()}}"> </a></td>
+            <td><a th:text="${user.uname}" th:href="@{'home/'+${user.getUserId()}}"> </a></td>
 
         </tr>
     </table>
