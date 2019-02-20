@@ -65,12 +65,13 @@
    }
    .div-content {
        padding: 10px 10px 20px 10px;
-       opacity: .86;
-       background-color: #009628;
+       background: rgba(0,150,40,0.6);
+       color: black;
        width: 400px;
        margin: auto;
-       border-radius:4px;
+       border-radius:5px;
    }
+
    header h2
    {
        margin: 0;
@@ -148,4 +149,20 @@
        background: #000000;
        border-radius: 5px 5px 5px 5px;
        padding: 5px;
+   }
+   .result
+   {
+       padding: 10px 10px 20px 10px;
+       background: rgba(0,150,40,0.8);
+       color: black;
+       width: 1000px;
+       margin: auto;
+       border-radius:5px;
+   }
+   .person
+   {
+       background-color: #ffffff;
+       border: 5px solid black;
+       border-radius: 5px;
+
    }
