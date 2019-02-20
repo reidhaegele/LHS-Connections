@@ -161,8 +161,27 @@
    }
    .person
    {
+       width: 60%;
+       height: 30px;
+       border: 1px solid black;
        background-color: #ffffff;
-       border: 5px solid black;
-       border-radius: 5px;
-
+       border-radius: 7px;
+       padding 25px;
+       margin: auto;
+   }
+   .selectClasses
+   {
+       border: 1px solid black;
+       background-color: #ffffff;
+       border-radius: 7px;
+       padding 25px;
+       margin: auto;
+   }
+   .wumbo
+   {
+       border: 1px solid black;
+       background-color: #ffffff;
+         border-radius: 7px;
+         padding 25px;
+         margin: auto;
    }

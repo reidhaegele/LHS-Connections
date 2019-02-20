@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
-    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css"/>
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
+<head th:replace="fragments :: head"></head>
 <h1>Create an Account</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 <body>
-<script type="text/javascript">
-    $(function() {
-        $(".chzn-select").chosen();
-    });
-</script>
-<script>
-    $(function() {
-        $("#selectid").on("change", function() {
-            var selected = $("option:selected", this).map(function() {
-                return $(this).text();
-            }).toArray().join(", ");
-
-            console.log(selected);
-        });
-    });
-  </script>
 <div class="container">
     <form method="post">
         <div>
