@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
-<!--<head class="header">-->
-    <!--<meta charset="UTF-8"/>-->
-    <!--<title class="header h1">LHS CONNECTIONS - LOGIN</title>-->
-<!--</head>-->
 <nav th:replace="fragments :: navigation"></nav>
-<body class="body">
-<div class="container body-content">
+<body>
+<p align = "center">
+<img src="http://localhost:8080/css/lhsConnections.png" alt="m" width="400" />
+</p>
+<div>
     <form method="post">
         <div align="center" class="div-content">
             <div>
-                <h1 class="header">
-                    LHS CONNECTIONS - LOGIN
+                <h1 class="header" >
+                    LOGIN
                 </h1>
             </div>
             <div>
                 <p>
+                    <div>
                     <label id="uname"><b>Username</b></label>
+            </div>
                     <input type="text" placeholder="Enter Username" name="uname" required="required"/>
                 </p>
             </div>
             <div>
                 <p align="center">
+                    <div>
                     <label id="psw"><b>Password</b></label>
+            </div>
                     <input type="password" placeholder="Enter Password" name="psw" required="required"/>
                 </p>
             </div>
+
+        </div>
+        <div align="center" class="login-button">
+        <p>
+            <button class="submit" type="submit">Login</button>
+        </p>
+        <div>
             <p>
-                <button type="submit">Login</button>
+                <a href="create" style="color:white">Don't have an account?</a>
             </p>
-            <div>
-                <p>
-                    <a href="create">Don't have an account?</a>
-                </p>
-            </div>
+        </div>
         </div>
     </form>
 </div>
