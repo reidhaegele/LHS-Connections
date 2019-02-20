@@ -95,7 +95,6 @@ public class User {
     public ArrayList<String> getClasses() {
         return classes;
     }
-
     public static int getNextUserId() {
         return nextUserId;
     }
