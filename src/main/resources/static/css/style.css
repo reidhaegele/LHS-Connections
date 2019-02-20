@@ -94,7 +94,7 @@
    .body
    {
        background: #fdfff3;
-       border: 0.5px solid #;
+       border: 0.5px solid;
        border-radius: 5px 5px 5px 5px;
        color: #000000;
        padding: 0 10px 0 0;
@@ -143,7 +143,7 @@
        border: 1px solid black;
        background-color: #ffffff;
        border-radius: 7px;
-       padding 25px;
+       padding: 25px;
        margin: auto;
    }
    .selectClasses
@@ -151,7 +151,7 @@
        border: 1px solid black;
        background-color: #ffffff;
        border-radius: 7px;
-       padding 25px;
+       padding: 25px;
        margin: auto;
    }
    .wumbo
@@ -159,7 +159,7 @@
        border: 1px solid black;
        background-color: #ffffff;
        border-radius: 7px;
-       padding 25px;
+       padding: 25px;
        display: inline;
        margin: auto;
    }
