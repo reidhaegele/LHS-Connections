@@ -29,9 +29,7 @@
 <div class="result" align="center">
     <h4 align = "center">Search Results</h4>
     <table align = "center" th:unless="${#lists.isEmpty(SearchedUsers)}">
-            <th>
-                <td>Tutor Names</td>
-            </th>
+            <p>Tutor Names</p>
         <tr th:each="user:${SearchedUsers}" >
             <td align = "center" class="person"><a th:text="${user.uname}" th:href="@{'home/'+${user.getUserId()}}"> </a></td>
         </tr>
