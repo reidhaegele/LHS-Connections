@@ -151,7 +151,7 @@
        border: 1px solid black;
        background-color: #ffffff;
        border-radius: 7px;
-       padding: 25px;
+       padding: 25px 25px 100px 50px;
        margin: auto;
    }
    .wumbo
@@ -162,4 +162,13 @@
        padding: 25px;
        display: inline;
        margin: auto;
+   }
+   .mayitakeyourhatsir
+   {
+    size: 10px;
+   }
+   span
+   {
+        float:left;
+        margin:5px;
    }
