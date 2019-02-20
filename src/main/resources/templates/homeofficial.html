@@ -26,16 +26,14 @@
 
 </form>
 
-<div>
-    <h4>Search Results</h4>
-    <table th:unless="${#lists.isEmpty(SearchedUsers)}">
-        <th>
-        <td>Tutor Names</td>
-        </th>
-        <tr th:each="user:${SearchedUsers}">
-
-            <td><a th:text="${user.uname}" th:href="@{'home/'+${user.getUserId()}}"> </a></td>
-
+<div class="result" align="center">
+    <h4 align = "center">Search Results</h4>
+    <table align = "center" th:unless="${#lists.isEmpty(SearchedUsers)}">
+            <th>
+                <td>Tutor Names</td>
+            </th>
+        <tr th:each="user:${SearchedUsers}" >
+            <td align = "center" class="person"><a th:text="${user.uname}" th:href="@{'home/'+${user.getUserId()}}"> </a></td>
         </tr>
     </table>
     <div th:if="${#lists.isEmpty(SearchedUsers)}">
