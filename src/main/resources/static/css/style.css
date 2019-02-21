@@ -13,7 +13,10 @@
     background-image: url("Background.png");
     background-repeat: no-repeat;
     background-size: cover;
-
+   }
+   .back
+   {
+   color: white;
    }
    img{
    margin: 25px 8px
@@ -154,6 +157,13 @@
           margin: auto;
           border-radius:5px;
    }
+   .grade-select{
+        width: 35px;
+        padding: 0px 0px 0px 0px;
+   }
+   .in{
+    width: 227px;
+   }
    .selectClasses
    {
        padding: 10px 10px 250px 10px;
@@ -174,7 +184,24 @@
    }
    .mayitakeyourhatsir
    {
+   background-color: #ffffff;
+   color: black;
    font-size:22px
+   }
+
+   .userClasses
+   {
+          padding: 10px 10px 10px 10px;
+          background: rgba(0,150,40,0.8);
+          color: black;
+          font-size: 22px;
+          width: 600px;
+          margin: 30px auto 30px auto;
+          border-radius:5px;
+   }
+   .contact
+   {
+   padding: 50px 10px 10px 20px
    }
    .test
    {

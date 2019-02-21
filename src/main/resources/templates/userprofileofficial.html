@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<head>
-    <meta charset="UTF-8"/>
-    <title>UserProfile</title>
-</head>
 <body>
-<h2 th:text="${user.dname} + ', ' + ${user.grade}">Unknown User, Unknown Grade</h2>
-<div>
-    <h4>What I can help you with: </h4>
+<div class = "userClasses">
+    <h2 align = "center" th:text="${user.dname} + ', ' + ${user.grade}">Unknown User, Unknown Grade</h2>
+    <h4 align = "center">What I can help you with: </h4>
 
-    <table th:unless="${#lists.isEmpty(user.getClasses())}">
-        <th >
-            <td>Class Name</td>
-        </th>
+    <table align = "center" th:unless="${#lists.isEmpty(user.getClasses())}">
+        <th><p align = "center">Class Name</p></th>
         <tr th:each="foo:${user.getClasses()}">
-            <td th:text="${foo}"></td>
+            <td align = "center" th:text="${foo}"></td>
         </tr>
     </table>
     <div th:if="${#lists.isEmpty(user.getClasses())}">
         <p>No classes!</p>
     </div>
+
+    <div class = "contact">
+        <h4 align = "center">How you can contact me:</h4>
+        <p align = "center" th:text="${user.contact}">Unknown Contact Info</p>
+    </div>
+    <div>
+        <p align = "center">
+            <a class = "back" href="/home" >Go Back?</a>
+        </p>
+    </div>
 </div>
-<div>
-    <h4>How you can contact me:</h4>
-    <p th:text="${user.contact}">Unknown Contact Info</p>
-</div>
+
 </body>
 </html>
