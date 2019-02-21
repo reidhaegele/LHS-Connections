@@ -14,24 +14,20 @@
             </div>
         <div>
             <p align = "center">
-            <label id="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+            <label id="uname" ><b>Username</b></label>
+            <input class = "in" type="text" placeholder="Enter Username" name="uname" required="required"/>
             </p>
         </div>
         <div>
             <p align = "center">
             <label id="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+            <input class = "in" type="password" placeholder="Enter Password" name="psw" required="required"/>
             </p>
         </div>
         <div>
             <p align = "center">
             <label id="grade"><b>Grade</b></label>
-            <input type="number" placeholder="9" name="grade" min="9" max="12" required="required"/>
-            </p>
-        </div>
-        <div>
-            <p align = "center">
+            <input class = "grade-select" type="number" placeholder="#" name="grade" min="9" max="12" required="required"/>
             <label id="contact"><b>Email</b></label>
             <input type="text" placeholder="Enter Contact Email" name="contact" required="required"/>
             </p>
@@ -39,13 +35,13 @@
         <div>
             <p align = "center">
             <label id="fname"><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="fname"/>
+            <input class = "in" type="text" placeholder="Enter First Name" name="fname"/>
             </p>
         </div>
         <div>
             <p align = "center">
             <label id="lname"><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="lname"/>
+            <input class = "in" type="text" placeholder="Enter Last Name" name="lname"/>
             </p>
         </div>
         </div>
@@ -75,7 +71,7 @@
                 </div>
             </div>
             <div class="test">
-                <p class="mayitakeyourhatsir">Math</p>
+                <p class="mayitakeyourhatsir">Mathematics</p>
                 <div>
                     <input id="Algebra" name="Algebra" type="checkbox" value="Algebra"/>
                     <label for="Algebra">Algebra</label>
@@ -195,7 +191,9 @@
         </div>
         <input type="hidden" name="_favoriteFrameworks" value="on"/>
         <div>
-            <button type="submit">Create</button>
+            <p align = "center">
+            <button class = "submit" type="submit">Create</button>
+            </p>
         </div>
     </form>
 </div>
