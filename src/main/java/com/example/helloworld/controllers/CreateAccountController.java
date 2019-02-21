@@ -16,8 +16,6 @@ public class CreateAccountController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
-        String[] classes = {"", "", "", "", ""};
-        model.addAttribute("classes", classes);
         return "createofficial";
     }
 

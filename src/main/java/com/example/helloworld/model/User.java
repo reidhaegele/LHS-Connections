@@ -1,5 +1,8 @@
 package com.example.helloworld.model;
 
+import org.hibernate.validator.constraints.Email;
+
+import javax.validation.Valid;
 import java.util.ArrayList;
 
 public class User {
@@ -10,6 +13,7 @@ public class User {
     private String grade;
     private String contact;
     private String dname;
+    private int hours;
     private ArrayList<String> classes = new ArrayList<String>(0);
 
     private static int nextUserId = 1;
@@ -38,6 +42,14 @@ public class User {
             this.classes.add("");
         else
             this.classes = classes;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 
     public void setUserId(int userId) {
@@ -95,6 +107,7 @@ public class User {
     public ArrayList<String> getClasses() {
         return classes;
     }
+
     public static int getNextUserId() {
         return nextUserId;
     }
