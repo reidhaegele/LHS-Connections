@@ -15,24 +15,16 @@ import java.util.ArrayList;
 public class CreateAccountController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index() {
+    public String index(Model model) {
+        String[] classes = {"", "", "", "", ""};
+        model.addAttribute("classes", classes);
         return "createofficial";
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw, @RequestParam("grade") String grade, @RequestParam("contact") String contact, @RequestParam("fname") String fname, @RequestParam("lname") String lname, @RequestParam("classes") String classes) {
-        ArrayList<String> classList = new ArrayList<String>(0);
-        int l = 0;
-        while (classes.contains(","))
-        {
-            classList.add(classes.substring(0, classes.indexOf(",")));
-            classes = classes.substring(0, classes.indexOf(","));
-        }
-        classList.add(classes);
-        User user = new User(uname, psw, grade, contact, fname, lname, classList);
+    public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw, @RequestParam("grade") String grade, @RequestParam("contact") String contact, @RequestParam("fname") String fname, @RequestParam("lname") String lname, @RequestParam("classes") ArrayList<String> classes) {
+        User user = new User(uname, psw, grade, contact, fname, lname, classes);
         UserData.add(user);
         return "redirect:login";
     }
 }
-
-
