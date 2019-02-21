@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<h1>Create an Account</h1>
-
 <nav th:replace="fragments :: navigation"></nav>
 <body>
 <div class="container">
+    <p align="center">
+        <img src="http://localhost:8080/css/lhsConnections.png" alt="m" width="200"/>
+    </p>
     <form method="post">
+        <div class = "create-data">
+            <div>
+                <h2 align = "center">Create an Account</h2>
+            </div>
         <div>
+            <p align = "center">
             <label id="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+            </p>
         </div>
         <div>
+            <p align = "center">
             <label id="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+            </p>
         </div>
         <div>
+            <p align = "center">
             <label id="grade"><b>Grade</b></label>
             <input type="number" placeholder="9" name="grade" min="9" max="12" required="required"/>
+            </p>
         </div>
         <div>
+            <p align = "center">
             <label id="contact"><b>Email</b></label>
             <input type="text" placeholder="Enter Contact Email" name="contact" required="required"/>
+            </p>
         </div>
         <div>
+            <p align = "center">
             <label id="fname"><b>First Name</b></label>
             <input type="text" placeholder="Enter First Name" name="fname"/>
+            </p>
         </div>
         <div>
+            <p align = "center">
             <label id="lname"><b>Last Name</b></label>
             <input type="text" placeholder="Enter Last Name" name="lname"/>
+            </p>
         </div>
-
+        </div>
         <div class="selectClasses">
-            <h2>Could you help with any classes?</h2>
-            <span>
+            <h3 align="center">Could you help with any classes?</h3>
+            <div class="test">
                <p class="mayitakeyourhatsir">Science</p>
                 <div>
                     <input id="Physics" name="physics" type="checkbox" value="physics"/>
@@ -56,8 +73,8 @@
                     <input id="Physical Science" name="Physical Science" type="checkbox" value="Physical Science"/>
                     <label for="Physical Science">Physical Science</label>
                 </div>
-            </span>
-            <span>
+            </div>
+            <div class="test">
                 <p class="mayitakeyourhatsir">Math</p>
                 <div>
                     <input id="Algebra" name="Algebra" type="checkbox" value="Algebra"/>
@@ -84,9 +101,9 @@
                     <label for="Calculus">Calculus</label>
                 </div>
 
-            </span>
-            <span>
-                <p class="mayitakeyourhatsir">English</p>
+            </div>
+            <div class="test">
+                <p class="mayitakeyourhatsir">Language Arts</p>
                <div>
                     <input id="General English" name="General English" type="checkbox" value="General English"/>
                     <label for="General English">General English</label>
@@ -99,8 +116,10 @@
                     <input id="Language" name="Language" type="checkbox" value="Language"/>
                     <label for="Language">Language</label>
                 </div>
-            </span>
-            <span>
+            </div>
+        </div>
+        <div class="selectClasses">
+            <div class="test">
                 <p class="mayitakeyourhatsir">Social Studies</p>
                <div>
                     <input id="World History" name="World History" type="checkbox" value="World History"/>
@@ -130,8 +149,8 @@
                     <input id="Sociology" name="Sociology" type="checkbox" value="Sociology"/>
                     <label for="Sociology">Sociology</label>
                 </div>
-            </span>
-            <span>
+            </div>
+            <div class="test">
                 <p class="mayitakeyourhatsir">Foreign Language</p>
                 <div>
                     <input id="Spanish" name="Spanish" type="checkbox" value="Spanish"/>
@@ -145,8 +164,8 @@
                     <input id="German" name="German" type="checkbox" value="German"/>
                     <label for="German">German</label>
                 </div>
-            </span>
-            <span>
+            </div>
+            <div class="test">
                 <p class="mayitakeyourhatsir">Engineering</p>
                 <div>
                     <input id="Engineering Principles" name="Engineering Principles" type="checkbox" value="Engineering Principles"/>
@@ -172,7 +191,7 @@
                     <input id="Programming" name="Programming" type="checkbox" value="Programming"/>
                     <label for="Programming">Programming</label>
                 </div>
-            </span>
+            </div>
         </div>
         <input type="hidden" name="_favoriteFrameworks" value="on"/>
         <div>
