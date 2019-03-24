@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<nav th:replace="fragments :: navigation"></nav>
+<head th:replace="fragments :: head"> </head>
+<nav th:replace="fragments :: navigation"> </nav>
 <body>
-<p align="center">
-    <img src="http://localhost:8080/css/lhsConnections.png" alt="m" width="200"/>
-</p>
+<h1 align = "center" style ="color:#ffffff">Scotsman Inventory Manager</h1>
 <form method="post" class="search">
     <div>
-        <p align="center">
-            <label id="searchParam"><b>Search for a class you need help with</b></label>
+        <div align = "center">
+        <select id = "sortBy" class="field" name = "sortBy">
+            <option value = "0">Sort By...</option>
+            <option value = "0"> Serial Number </option>
+            <option value = "1"> Model Number </option>
+            <option value = "2"> Cost </option>
+            <option value = "3"> Price </option>
+            <option value = "4"> Dollar Variance </option>
+            <option value = "5"> Invoice Sold On </option>
+            <option value = "6"> Sold To </option>
+            <option value = "7"> Shipped To </option>
+            <option value = "8"> Warranty Start Date </option>
+            <option value = "9"> Spiff To </option>
+            <option value = "10"> Spiff </option>
+            <option value = "11"> Freight In </option>
+            <option value = "12"> Freight Out </option>
+        </select>
+        <p>
+            <button class="searchButton" type="submit">Sort</button>
         </p>
+        </div>
+        <h3 align = "center" style = "color:#000000">Items By Serial Number</h3>
+            <table align = "center" th:unless="${#lists.isEmpty(Items)}">
+                    <th align = "center" style="color:#ffffff">Serial Number</th>
+                    <th align = "center" style="color:#ffffff">Model Number</th>
+                    <th align = "center" style="color:#ffffff">Cost</th>
+                    <th align = "center" style="color:#ffffff">Price</th>
+                    <th align = "center" style="color:#ffffff">Dollar Variance</th>
+                    <th align = "center" style="color:#ffffff">Invoice Sold On</th>
+                    <th align = "center" style="color:#ffffff">Sold To</th>
+                    <th align = "center" style="color:#ffffff">Shipped To</th>
+                    <th align = "center" style="color:#ffffff">Warranty Start</th>
+                    <th align = "center" style="color:#ffffff">Spiff To </th>
+                    <th align = "center" style="color:#ffffff">Spiff </th>
+                    <th align = "center" style="color:#ffffff">Freight In</th>
+                    <th align = "center" style="color:#ffffff">Freight Out</th>
+                <tr th:each="foo:${Items}">
+                    <td align = "center" class="person"><p th:text="${foo.getSerNum()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getModelNum()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getCost()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getPrice()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getDollarVar()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getInvSoldOn()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getSoldTo()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getShippedTo()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getWarrantyStart()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getSpiff()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getSpiffTo()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getFreightIn()}"> </p></td>
+                    <td algin = "center" class="person"><p th:text="${foo.getFreightOut()}"> </p></td>
+                </tr>
+            </table>
     </div>
-    <div>
-        <p align="center">
-            <input class="homeSearch" type="text" placeholder="Enter Class" name="searchParam"/>
-            <div>
-        <p align="center">
-            <button class="searchButton" type="submit">Search</button>
-        </p>
-    </div>
-    </p>
-    </div>
-
-
 </form>
 
-<div class="result" align="center">
-    <h4 align = "center">Search Results</h4>
-    <table align = "center" th:unless="${#lists.isEmpty(SearchedUsers)}">
-            <p>Tutor Names</p>
-        <tr th:each="user:${SearchedUsers}" >
-            <td align = "center" class="person"><a th:text="${user.uname}" th:href="@{'home/'+${user.getUserId()}}"> </a></td>
-        </tr>
-    </table>
-    <div th:if="${#lists.isEmpty(SearchedUsers)}">
-        <p>No tutors!</p>
-    </div>
+
+<div align = "center">
+<form method="POST" action="/home/upload" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+<form method="POST" action="/home/download">
+    <input type="submit" value="Download Data As CSV" />
+</form>
 </div>
 </body>
 </html>

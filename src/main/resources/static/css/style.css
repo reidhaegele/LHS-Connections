@@ -22,7 +22,7 @@
    margin: 25px 8px
    }
    .submit {
-     background-color: #009628; /* Green */
+     background-color: #2551ff; /* Green */
      border: none;
      color: white;
      padding: 15px 32px;
@@ -39,7 +39,7 @@
    .search{
     padding: 10px 10px 20px 10px;
            opacity: .8;
-           background-color: #009628;
+           background-color: #2551FF;
            width: 1000px;
            margin: auto;
            border-radius:4px;
@@ -51,7 +51,7 @@
         border-radius: 4px;
    }
    .searchButton {
-        background-color: #009628; /* Green */
+        background-color: #2551ff; /* Green */
         border: none;
         color: white;
         padding: 6px 18px;
@@ -68,7 +68,7 @@
    }
    .div-content {
        padding: 10px 10px 20px 10px;
-       background: rgba(0,150,40,0.6);
+       background: rgba(37,81,255,0.6);
        color: black;
        width: 400px;
        margin: auto;
@@ -133,7 +133,7 @@
    .result
    {
        padding: 10px 10px 20px 10px;
-       background: rgba(0,150,40,0.8);
+       background: rgba(37,81,255,0.8);
        color: black;
        width: 1000px;
        margin: auto;
@@ -142,16 +142,16 @@
    .person
    {
        width: 60%;
-       height: 30px;
+       height: 15px;
        border: 1px solid black;
        background-color: #ffffff;
-       border-radius: 7px;
+       border-radius: 1px;
        padding: 25px;
        margin: auto;
    }
    .create-data{
         padding: 10px 10px 20px 10px;
-          background: rgba(0,150,40,0.8);
+          background: rgba(37,81,255,0.8);
           color: black;
           width: 540px;
           margin: auto;
@@ -167,7 +167,7 @@
    .selectClasses
    {
        padding: 10px 10px 250px 10px;
-       background: rgba(0,150,40,0.8);
+       background: rgba(37,81,255,0.8);
        color: black;
        width: 540px;
        margin: auto;
@@ -192,7 +192,7 @@
    .userClasses
    {
           padding: 10px 10px 10px 10px;
-          background: rgba(0,150,40,0.8);
+          background: rgba(37,81,255,0.8);
           color: black;
           font-size: 22px;
           width: 600px;

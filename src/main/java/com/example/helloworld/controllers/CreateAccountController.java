@@ -20,8 +20,8 @@ public class CreateAccountController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw, @RequestParam("grade") String grade, @RequestParam("contact") String contact, @RequestParam("fname") String fname, @RequestParam("lname") String lname, @RequestParam("classes") ArrayList<String> classes) {
-        User user = new User(uname, psw, grade, contact, fname, lname, classes);
+    public String createAcc(Model model, @RequestParam("uname") String uname, @RequestParam("psw") String psw) {
+        User user = new User(uname, psw);
         UserData.add(user);
         return "redirect:login";
     }
