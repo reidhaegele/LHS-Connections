@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<form method="post">
+    <div align="center" class="div-content">
+        <div>
+            <h2 class="header" th:text = "'Edit Item Number ' + ${item.getSerNum()} + ': '">
+            </h2>
+        </div>
+        <div>
+            <p>
+            <div>
+                <label id="cost"><b>Cost</b></label>
+            </div>
+            <input type="text" placeholder="Enter Cost" name="cost" th:value = "${item.getCost()}"  required="required"/>
+            </p>
+        </div>
+        <div>
+            <p>
+            <div>
+                <label id="price"><b>Price</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter Price" name="price" th:value = "${item.getPrice()}"  required="required"/>
+            </p>
+        </div>
+        <div>
+            <p>
+            <div>
+                <label id="dollarVar"><b>Dollar Variance</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter Dollar Variance" name="dollarVar" th:value = "${item.getDollarVar()}"  required="required"/>
+            </p>
+        </div>
+        <div>
+            <p>
+            <div>
+                <label id="invSoldOn"><b>Invoice Sold On</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter When Sold" name="InvSoldOn" th:value = "${item.getInvSoldOn()}"  required="required"/>
+            </p>
+        </div>
+        <div>
+            <p>
+            <div>
+                <label id="soldTo"><b>Sold To</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter Customer" name="soldTo" th:value = "${item.getSoldTo()}"  required="required"/>
+            </p>
+        </div><div>
+        <p>
+        <div>
+            <label id="shippedTo"><b>Shipped To</b></label>
+        </div>
+
+        <input type="text" placeholder="Enter Shipped To" name="shippedTo" th:value = "${item.getShippedTo()}"  required="required"/>
+        </p>
+    </div>
+        <div>
+        <p>
+        <div>
+            <label id="warStart"><b>Warranty Start</b></label>
+        </div>
+
+        <input type="text" placeholder="Enter Start" name="uname" th:value = "${item.getWarrantyStart()}"  required="required"/>
+        </p>
+    </div>
+        <div>
+        <p>
+        <div>
+            <label id="spiff"><b>Spiff</b></label>
+        </div>
+
+        <input type="text" placeholder="Enter Spiff" name="spiff" th:value = "${item.getSpiff()}"  required="required"/>
+        </p>
+
+    </div>
+        <div>
+            <p>
+            <div>
+                <label id="spiffTo"><b>Spiff To</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter Spiff To" name="spiffTO" th:value = "${item.getSpiffTo()}"  required="required"/>
+            </p>
+        </div>
+        <input type="text" placeholder="Enter Freight In" name="freight" th:value = "${item.getFreightIn()}"  required="required"/>
+        </p>
+
+        <div>
+            <p>
+            <div>
+                <label id="freightIn"><b>Freight In</b></label>
+            </div>
+
+        <div>
+            <p>
+            <div>
+                <label id="freightOut"><b>Freight Out</b></label>
+            </div>
+
+            <input type="text" placeholder="Enter Freight Out" name="freightOut" th:value = "${item.getFreightOut()}"  required="required"/>
+            </p>
+        </div>
+    </div>
+    <div align="center" class="login-button">
+        <p>
+            <button class="submit" type="submit">Update</button>
+        </p>
+    </div>
+    </div>
+</form>
+
+</body>
+</html>
