@@ -41,7 +41,6 @@ public class HomeController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String index(@RequestParam("sortBy") String sortBy, Model model) {
-        System.out.println(sortBy + " What " + ItemData.getAll().getFirst() + " " + Integer.parseInt(sortBy));
         Tree users = new Tree(ItemData.getAll().getFirst(), Integer.parseInt(sortBy));
         LinkedList<Item> crud = ItemData.getAll();
         crud.removeFirst();
@@ -53,11 +52,6 @@ public class HomeController {
         return "redirect:";
     }
 
-    @RequestMapping(value = "/{id}")
-    public String profile(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", UserData.getById(id));
-        return "userprofileofficial";
-    }
 
     @PostMapping("/download")
     public String downButton() {

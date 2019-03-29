@@ -43,7 +43,7 @@
                     <th align = "center" style="color:#ffffff">Freight In</th>
                     <th align = "center" style="color:#ffffff">Freight Out</th>
                 <tr th:each="foo:${Items}">
-                    <td align = "center" class="person"><p th:text="${foo.getSerNum()}"> </p></td>
+                    <td align = "center" class="person"><a th:href="@{'/items/' + ${foo.getSerNum()}}" th:text="${foo.getSerNum()}"> </a></td>
                     <td algin = "center" class="person"><p th:text="${foo.getModelNum()}"> </p></td>
                     <td algin = "center" class="person"><p th:text="${foo.getCost()}"> </p></td>
                     <td algin = "center" class="person"><p th:text="${foo.getPrice()}"> </p></td>
