@@ -44,29 +44,34 @@
                     <th align = "center" style="color:#ffffff">Freight Out</th>
                 <tr th:each="foo:${Items}">
                     <td align = "center" class="person"><a th:href="@{'/items/' + ${foo.getSerNum()}}" th:text="${foo.getSerNum()}"> </a></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getModelNum()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getCost()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getPrice()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getDollarVar()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getInvSoldOn()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getSoldTo()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getShippedTo()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getWarrantyStart()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getSpiff()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getSpiffTo()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getFreightIn()}"> </p></td>
-                    <td algin = "center" class="person"><p th:text="${foo.getFreightOut()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getModelNum()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getCost()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getPrice()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getDollarVar()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getInvSoldOn()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getSoldTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getShippedTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getWarrantyStart()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getSpiff()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getSpiffTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getFreightIn()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${foo.getFreightOut()}"> </p></td>
                 </tr>
             </table>
     </div>
+    <p align = "center">
+        <br/>
+    <a style="color:#ffffff" href="/items/add">Add New Item?</a>
+    </p>
 </form>
 
-
+<br/><br/>
 <div align = "center">
 <form method="POST" action="/home/upload" enctype="multipart/form-data">
-    <input type="file" name="file" /><br/><br/>
+    <input type="file" value="Choose File To Upload" name="file" />
     <input type="submit" value="Submit" />
 </form>
+    <br/><br/>
 <form method="POST" action="/home/download">
     <input type="submit" value="Download Data As CSV" />
 </form>

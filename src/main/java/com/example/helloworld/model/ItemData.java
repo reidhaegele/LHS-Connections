@@ -26,9 +26,22 @@ public class ItemData
             if(ser.equalsIgnoreCase(item.getSerNum()))
             {
                 out = item;
+                return out;
             }
         }
         out = new Item("", "", "", "", "", "", "", "", "", "", "", "", "");
         return out;
+    }
+
+    public static void del(String id)
+    {
+        for(int i = 0; i < items.size(); i++)
+        {
+            if(items.get(i).getSerNum().equalsIgnoreCase(id))
+            {
+                items.remove(i);
+                break;
+            }
+        }
     }
 }

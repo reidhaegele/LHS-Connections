@@ -49,7 +49,7 @@ public class HomeController {
             users.add(user);
         }
         ItemData.items = users.print();
-        return "redirect:";
+        return "redirect:/home";
     }
 
 

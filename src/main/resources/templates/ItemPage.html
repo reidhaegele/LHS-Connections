@@ -11,6 +11,14 @@
         <div>
             <p>
             <div>
+                <label id="mod"><b>Model Number</b></label>
+            </div>
+            <input type="text" placeholder="Enter Model Number" name="mod" th:value = "${item.getModelNum()}"  required="required"/>
+            </p>
+        </div>
+        <div>
+            <p>
+            <div>
                 <label id="cost"><b>Cost</b></label>
             </div>
             <input type="text" placeholder="Enter Cost" name="cost" th:value = "${item.getCost()}"  required="required"/>
@@ -65,7 +73,7 @@
             <label id="warStart"><b>Warranty Start</b></label>
         </div>
 
-        <input type="text" placeholder="Enter Start" name="uname" th:value = "${item.getWarrantyStart()}"  required="required"/>
+        <input type="text" placeholder="Enter Start" name="wStart" th:value = "${item.getWarrantyStart()}"  required="required"/>
     </div>
         <div>
         <p>
@@ -83,13 +91,16 @@
                 <label id="spiffTo"><b>Spiff To</b></label>
             </div>
 
-            <input type="text" placeholder="Enter Spiff To" name="spiffTO" th:value = "${item.getSpiffTo()}"  required="required"/>
+            <input type="text" placeholder="Enter Spiff To" name="spiffTo" th:value = "${item.getSpiffTo()}"  required="required"/>
             </p>
         </div>
-        <input type="text" placeholder="Enter Freight In" name="freight" th:value = "${item.getFreightIn()}"  required="required"/>
+        <div>
             <div>
                 <label id="freightIn"><b>Freight In</b></label>
             </div>
+        <input type="text" placeholder="Enter Freight In" name="freight" th:value = "${item.getFreightIn()}"  required="required"/>
+
+        </div>
         <div>
             <p>
             <div>
@@ -106,6 +117,8 @@
         </p>
     </div>
 </form>
-
+<p align = "center">
+<a th:href = "${item.getSerNum()} + '/delete'">Delete Item?</a>
+</p>
 </body>
 </html>

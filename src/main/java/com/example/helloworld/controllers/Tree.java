@@ -20,9 +20,6 @@ public class Tree {
     {
         LinkedList<Item> out = new LinkedList<Item>();
         root.printInOrder(out);
-        for (Item item:out) {
-            System.out.println(param + " dw " + item.getSerNum());
-        }
         return out;
     }
 }
@@ -43,7 +40,6 @@ class ListNode {
         String[] junk = data.getAll();
         if(param == 5 || param == 6 || param == 9) {
             if (stuff[param].compareTo(junk[param]) <= 0) {
-                System.out.println("if " + stuff[param].compareTo(junk[param]));
                 if (left == null)
                     left = new ListNode(val);
 
@@ -51,7 +47,6 @@ class ListNode {
                     left.insert(val, param);
                 }
             } else {
-                System.out.println("else " + stuff[param].compareTo(junk[param]));
                 if (right == null)
                     right = new ListNode(val);
                 else
