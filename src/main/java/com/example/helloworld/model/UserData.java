@@ -6,27 +6,16 @@ import java.util.ArrayList;
 
 public class UserData {
 
-    static ArrayList<User> user = new ArrayList<>();
+    private static ArrayList<User> users = new ArrayList<>();
 
     // getAll
     public static ArrayList<User> getAll() {
-        return user;
+        return users;
     }
 
     // add
     public static void add(User newUser) {
-        user.add(newUser);
+        users.add(newUser);
     }
-    public static User getById(int id) {
 
-        User theUser = null;
-
-        for (User candidateName : user) {
-            if (candidateName.getUserId() == id) {
-                theUser = candidateName;
-            }
-        }
-
-        return theUser;
-    }
 }

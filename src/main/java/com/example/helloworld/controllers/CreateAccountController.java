@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 
 @Controller
-        @RequestMapping(value = "create")
+@RequestMapping(value = "create")
 public class CreateAccountController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)

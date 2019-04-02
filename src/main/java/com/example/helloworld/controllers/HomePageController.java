@@ -16,11 +16,7 @@ import java.util.Arrays;
 @RequestMapping(value = "")
 public class HomePageController {
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index(Model model) {
-        //upperclassmen
-
-        model.addAttribute("title", "Users");
-        model.addAttribute("Users", UserData.getAll());
+    public String index() {
         return "redirect:login";
     }
 }

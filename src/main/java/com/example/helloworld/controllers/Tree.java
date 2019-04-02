@@ -56,7 +56,6 @@ class ListNode {
         else
         {
             if (Integer.parseInt(stuff[param]) <= Integer.parseInt(junk[param])) {
-                System.out.println("if " + stuff[param].compareTo(junk[param]));
                 if (left == null)
                     left = new ListNode(val);
 
@@ -64,7 +63,6 @@ class ListNode {
                     left.insert(val, param);
                 }
             } else {
-                System.out.println("else " + stuff[param].compareTo(junk[param]));
                 if (right == null)
                     right = new ListNode(val);
                 else

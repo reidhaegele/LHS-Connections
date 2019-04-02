@@ -2,8 +2,6 @@ package com.example.helloworld.controllers;
 
 import com.example.helloworld.model.Item;
 import com.example.helloworld.model.ItemData;
-import com.example.helloworld.model.User;
-import com.example.helloworld.model.UserData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,19 +32,21 @@ public class HomeController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
+        for(int i = 0; i < 5; i++)
+            ItemData.del("");
         model.addAttribute("title", "Items");
         model.addAttribute("Items", ItemData.getAll());
         return "homeofficial";
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String index(@RequestParam("sortBy") String sortBy, Model model) {
+    public String index(@RequestParam("sortBy") String sortBy) {
         Tree users = new Tree(ItemData.getAll().getFirst(), Integer.parseInt(sortBy));
-        LinkedList<Item> crud = ItemData.getAll();
-        crud.removeFirst();
-        for (Item user : crud)
+        LinkedList<Item> list = ItemData.getAll();
+        list.removeFirst();
+        for (Item item : list)
         {
-            users.add(user);
+            users.add(item);
         }
         ItemData.items = users.print();
         return "redirect:/home";
@@ -59,10 +59,10 @@ public class HomeController {
             BufferedWriter bw = new BufferedWriter(
                     new FileWriter(new File("C:/users/" + System.getProperty("user.name") + "/downloads/dataOut.csv"), true));
             for (Item item : ItemData.getAll()) {
-                bw.newLine();
                 for (String param : item.getAll()) {
                     bw.write(param + ", ");
                 }
+                bw.newLine();
             }
             bw.close();
         } catch (FileNotFoundException e) {
@@ -75,28 +75,21 @@ public class HomeController {
         return "redirect:";
     }
 
-    @PostMapping("/upload") // //new annotation since 4.3
+    @PostMapping("/upload")
     public String singleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
 
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:/home/uploadStatus";
+            return "redirect:/home";
         }
 
         try {
 
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
-            System.out.println(file.getOriginalFilename());
             Path path = Paths.get(UPLOADED_FOLDER + "\\" + file.getOriginalFilename());
-            boolean isRegularFile = Files.isRegularFile(path);
-            boolean isHidden = Files.isReadable(path);
-            boolean isReadable = Files.isReadable(path);
-            boolean isExecutable = Files.isExecutable(path);
-            boolean isSymbolicLink = Files.isSymbolicLink(path);
             Files.write(path, bytes);
-            System.out.println(isRegularFile + " " + isHidden + " " + isReadable + " " + isExecutable + " " + isSymbolicLink);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
             try {
@@ -120,17 +113,7 @@ public class HomeController {
             e.printStackTrace();
         }
 
-        return "redirect:/home/uploadStatus";
-    }
-
-    @GetMapping("/uploadStatus")
-    public String uploadStatus() {
-        return "uploadStatus";
-    }
-
-    @PostMapping("/uploadStatus")
-    public String leaveThisPage() {
-        return "redirect:";
+        return "redirect:/home";
     }
 
 }

@@ -23,18 +23,6 @@ public class User {
     }
 
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public void setPsw(String psw) {
-        this.psw = psw;
-    }
-
     public int getUserId() {
         return userId;
     }
