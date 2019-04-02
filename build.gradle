@@ -38,7 +38,7 @@ bootRun {
 }
 
 springBoot {
-	mainClassName = 'com.example.helloworld.HelloWorldApplication'
+	mainClassName = 'com.example.helloworld.ApplicationRun'
 }
 
 bootJar{

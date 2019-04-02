@@ -27,7 +27,7 @@
             <button class="searchButton" type="submit">Sort</button>
         </p>
         </div>
-        <h3 align = "center" style = "color:#000000">Items By Serial Number</h3>
+        <h3 align = "center" style = "color:#000000">Items</h3>
             <table align = "center" th:unless="${#lists.isEmpty(Items)}">
                     <th align = "center" style="color:#ffffff">Serial Number</th>
                     <th align = "center" style="color:#ffffff">Model Number</th>
@@ -42,20 +42,20 @@
                     <th align = "center" style="color:#ffffff">Spiff </th>
                     <th align = "center" style="color:#ffffff">Freight In</th>
                     <th align = "center" style="color:#ffffff">Freight Out</th>
-                <tr th:each="foo:${Items}">
-                    <td align = "center" class="person"><a th:href="@{'/items/' + ${foo.getSerNum()}}" th:text="${foo.getSerNum()}"> </a></td>
-                    <td align = "center" class="person"><p th:text="${foo.getModelNum()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getCost()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getPrice()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getDollarVar()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getInvSoldOn()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getSoldTo()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getShippedTo()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getWarrantyStart()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getSpiff()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getSpiffTo()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getFreightIn()}"> </p></td>
-                    <td align = "center" class="person"><p th:text="${foo.getFreightOut()}"> </p></td>
+                <tr th:each="item:${Items}">
+                    <td align = "center" class="person"><a th:href="@{'/items/' + ${item.getSerNum()}}" th:text="${item.getSerNum()}"> </a></td>
+                    <td align = "center" class="person"><p th:text="${item.getModelNum()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getCost()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getPrice()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getDollarVar()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getInvSoldOn()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getSoldTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getShippedTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getWarrantyStart()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getSpiff()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getSpiffTo()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getFreightIn()}"> </p></td>
+                    <td align = "center" class="person"><p th:text="${item.getFreightOut()}"> </p></td>
                 </tr>
             </table>
     </div>

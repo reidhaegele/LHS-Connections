@@ -38,7 +38,7 @@ class ListNode {
     public void insert(Item val, int param) {
         String[] stuff = val.getAll();
         String[] junk = data.getAll();
-        if(param == 5 || param == 6 || param == 9) {
+        if(param == 5 || param == 6 || param == 7 || param == 9) {
             if (stuff[param].compareTo(junk[param]) <= 0) {
                 if (left == null)
                     left = new ListNode(val);
